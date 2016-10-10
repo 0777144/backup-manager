@@ -30,7 +30,7 @@ class PostgresqlDatabase implements Database {
      * @return string
      */
     public function getDumpCommandLine($outputPath) {
-        return sprintf('PGPASSWORD=%s pg_dump --host=%s --port=%s --username=%s %s -f %s',
+        return sprintf('PGPASSWORD=%s pg_dump --host=%s --port=%s --username=%s %s --data-only -f %s',
             escapeshellarg($this->config['pass']),
             escapeshellarg($this->config['host']),
             escapeshellarg($this->config['port']),
